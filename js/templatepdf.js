@@ -15,8 +15,8 @@ $("#generate-pdf").click(function() {
   
   html2PDF(pdfRendered, {
     jsPDF: {
-      format: 'a0',
-      orientation: 'landscape'
+      format: 'a4',
+      orientation: 'portrait'
     },
     html2canvas: {
       logging: true,
@@ -25,7 +25,7 @@ $("#generate-pdf").click(function() {
     },
     imageType: 'image/jpeg',
     output: pdfTitle[LANG],
-    imageQuality: 2,
+    imageQuality: 3,
     margin: {
       top: 0,
       right: 0,

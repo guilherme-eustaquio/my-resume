@@ -354,4 +354,5 @@ function initContent(ids, mapActive) {
 
 document.getElementsByTagName("body")[0].addEventListener("changelang", function() {
 	initContent(["about", "experience", "technical-skills", "personal-skills", "education"], true);
+
 });
