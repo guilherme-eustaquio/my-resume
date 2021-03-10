@@ -25,12 +25,12 @@ $("#generate-pdf").click(function() {
     },
     imageType: 'image/jpeg',
     output: pdfTitle[LANG],
-    imageQuality: 1,
+    imageQuality: 2,
     margin: {
       top: 0,
-      right: 30,
+      right: 0,
       bottom: 0,
-      left: 30,
+      left: 0,
     }
   });
 
