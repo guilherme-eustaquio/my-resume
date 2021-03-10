@@ -185,11 +185,17 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-function initContent() {
+function initContent(ids, mapActive) {
+
+	let aboutId = ids[0];
+	let experienceId = ids[1];
+	let technicalSkillId = ids[2];
+	let personalSkillId = ids[3];
+	let educationId = ids[4];
 
 	const initAbout = function() {
 
-		let aboutElement = document.getElementById("about");
+		let aboutElement = document.getElementById(aboutId);
 		let str = `
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1">
             <h1 class="h2">${aboutOptions[LANG].name}</h1>
@@ -210,7 +216,7 @@ function initContent() {
 		aboutElement.innerHTML = str;
 	}
 
-	const initExperience = function() {
+	const initMapExperience = function() {
 
 		experienceOptions[LANG].companiesPoint.forEach(exp => {
 			L.marker(exp.coordinates).addTo(map)
@@ -218,7 +224,7 @@ function initContent() {
 				<a target = "_blank" href = "https://www.google.com/maps?layer=c&cbll=${exp.coordinates[0]},${exp.coordinates[1]}">${experienceOptions[LANG].streetView}</a>`).openPopup();
 		});
 
-		let contentElement = document.getElementById("experience");
+		let contentElement = document.getElementById(experienceId);
 
 		if(contentElement.childElementCount > 1) {
 			contentElement.removeChild(contentElement.childNodes[0]); 
@@ -241,8 +247,30 @@ function initContent() {
 
 	}
 
+	const initExperience = function() {
+    	let str = `
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1">
+              <h1 class="h2">${experienceOptions[LANG].title}</h1>
+          </div>
+          <p class="lead text-muted ml-3">    
+            ${experienceOptions[LANG].help}
+          </p>
+      	`;
+
+      	let experienceElement = document.getElementById(experienceId);
+
+    	experienceOptions[LANG].companiesPoint.forEach(exp => {
+      		str += `
+            	<p class="lead text-muted mt-4 ml-3">    
+            		- ${exp.name}: ${exp.work}
+            	</p>`;
+    	});
+
+    	experienceElement.innerHTML = str;
+	}
+
 	const initTechnicalSkill = function() {
-		let technicalSkillElement = document.getElementById("technical-skills");
+		let technicalSkillElement = document.getElementById(technicalSkillId);
 		let str = `
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1 mb-3">
                 <h1 class="h2">${technicalSkillsOptions[LANG].title}</h1>
@@ -262,7 +290,7 @@ function initContent() {
 	}
 
 	const initPersonalSkill = function() {
-		let personalSkillElement = document.getElementById("personal-skills");
+		let personalSkillElement = document.getElementById(personalSkillId);
 		let str = `
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1 mb-3">
                 <h1 class="h2">${personalSkillsOptions[LANG].title}</h1>
@@ -282,7 +310,7 @@ function initContent() {
 	}
 
 	const initEducation = function() {
-		let educationElement = document.getElementById("education");
+		let educationElement = document.getElementById(educationId);
 		let str = `
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1 mb-3">
                 <h1 class="h2">${educationOptions[LANG].title}</h1>
@@ -312,12 +340,18 @@ function initContent() {
 	}
 
 	initAbout();
-	initExperience();
+
+	if(mapActive == true) {
+		initMapExperience();
+	} else {
+		initExperience();
+	}
+
 	initTechnicalSkill();
 	initPersonalSkill();
 	initEducation();
 }
 
 document.getElementsByTagName("body")[0].addEventListener("changelang", function() {
-	initContent();
+	initContent(["about", "experience", "technical-skills", "personal-skills", "education"], true);
 });

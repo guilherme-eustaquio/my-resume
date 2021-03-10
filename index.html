@@ -10,7 +10,9 @@
         <link href="css/bootstrap.min.css" rel = "stylesheet">
         <link href="css/dashboard.css" rel = "stylesheet">
         <link href="css/leaflet.css" rel = "stylesheet">
-        <script src = "js/jspdf.min.js"></script>
+        <script src="js/jspdf.umd.min.js"></script>
+        <script src="js/html2canvas.min.js"></script>
+        <script src="js/jspdf-html2canvas.min.js"></script>
     </head>
     <body>
         <div class="container-fluid">
@@ -70,6 +72,37 @@
           </div>
         </div>
 
+
+        <div class = "container-fluid background-outside-pdf" style = "display: none" id = "pdf-to-render">
+          <div class="d-flex justify-content-center background-inner-pdf shadow">
+
+            <main role="main">
+
+              <div class = "content">
+
+                <div class="d-flex justify-content-center mb-5">
+                    <img src = "images/profile/me.jpeg" class = "profile profile-pdf">
+                </div>
+
+                  <div id = "about-pdf" class = "mb-5">
+                  </div>
+
+                  <div id = "experience-pdf" class = "mb-5">
+                    <div id = "mapid"></div>
+                  </div>
+
+                  <div id = "technical-skills-pdf" class = "mb-5">
+                  </div>
+                  <div id = "personal-skills-pdf" class = "mb-5">
+                  </div>
+
+                  <div id = "education-pdf">
+                  </div>
+              </div>
+            </main>
+          </div>
+        </div>
+
         <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -93,7 +126,6 @@
         <script src = "js/bootstrap.min.js"></script>
         <script src = "js/feather.min.js"></script>
         <script src = "js/moment.min.js"></script>
-        <script src = "js/html2canvas.min.js"></script>
         <script src = "js/leaflet.js"></script>
         <script src = "js/globals.js"></script>
         <script src = "js/modal.js"></script>
