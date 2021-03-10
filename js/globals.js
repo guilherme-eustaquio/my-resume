@@ -20,6 +20,7 @@ $(document).ready(function() {
 
 
 $("#generate-pdf").click(function() {
+    window.jsPDF = window.jspdf.jsPDF;
 	html2canvas(document.body, { useCORS:true}).then(function(canvas) {
         let imgData = canvas.toDataURL(
             'image/png');
