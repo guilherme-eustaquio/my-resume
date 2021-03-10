@@ -10,7 +10,7 @@ $("#generate-pdf").click(function() {
 
   initContent(["about-pdf", "experience-pdf", "technical-skills-pdf", "personal-skills-pdf", "education-pdf"], false);
 
-  let pdfRendered = document.getElementById("about");
+  let pdfRendered = document.getElementById("pdf-to-render");
   pdfRendered.style.display = "block";
   
   html2PDF(pdfRendered, {
