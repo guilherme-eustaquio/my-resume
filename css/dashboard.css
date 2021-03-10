@@ -198,3 +198,19 @@ body {
 .dropdown-item {
     cursor: pointer;
 }
+
+.profile-pdf {
+    width: 245px;
+    height: 240px;
+}
+
+.background-outside-pdf {
+    background-color: #006699;
+}
+
+.background-inner-pdf {
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}

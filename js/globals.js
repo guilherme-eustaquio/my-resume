@@ -4,10 +4,6 @@ let titles = {
 	"pt-BR": "Currículo Guilherme",
 	"en-US": "Guilherme Resume"
 };
-let pdfTitle = {
-	"pt-BR": "Currículo de Guilherme Eustáquio",
-	"en-US": "Resume of Guilherme Eustáquio"	
-}
 
 
 $(document).ready(function() {
@@ -17,19 +13,6 @@ $(document).ready(function() {
 
 	changeLanguage("#portuguese");
 });
-
-
-$("#generate-pdf").click(function() {
-    window.jsPDF = window.jspdf.jsPDF;
-	html2canvas(document.body, { useCORS:true}).then(function(canvas) {
-        let imgData = canvas.toDataURL(
-            'image/png');
-        let doc = new jsPDF('p', 'mm');
-        doc.addImage(imgData, 'PNG', 10, 10);
-        doc.save(pdfTitle[LANG]);
-	});
-});
-
 
 $("#portuguese-option, #english-option").click(function() {
 
