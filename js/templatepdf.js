@@ -15,7 +15,7 @@ $("#generate-pdf").click(function() {
   
   html2PDF(pdfRendered, {
     jsPDF: {
-      format: 'a4',
+      format: 'a0',
       orientation: 'landscape'
     },
     html2canvas: {
