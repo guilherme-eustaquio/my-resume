@@ -4,11 +4,31 @@ let titles = {
 	"pt-BR": "Currículo Guilherme",
 	"en-US": "Guilherme Resume"
 };
+let pdfTitle = {
+	"pt-BR": "Currículo de Guilherme Eustáquio",
+	"en-US": "Resume of Guilherme Eustáquio"	
+}
 
 
 $(document).ready(function() {
+	if(location.hash == "") {
+		location.hash = "#about";
+	}
+
 	changeLanguage("#portuguese");
 });
+
+
+$("#generate-pdf").click(function() {
+	html2canvas(document.body, { useCORS:true}).then(function(canvas) {
+        let imgData = canvas.toDataURL(
+            'image/png');
+        let doc = new jsPDF('p', 'mm');
+        doc.addImage(imgData, 'PNG', 10, 10);
+        doc.save(pdfTitle[LANG]);
+	});
+});
+
 
 $("#portuguese-option, #english-option").click(function() {
 
