@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Resume">
+        <meta name="author" content="Guilherme Eustáquio Moreira Santana">
+        <title id = "title-page"></title>
+        <link href="css/bootstrap.min.css" rel = "stylesheet">
+        <link href="css/dashboard.css" rel = "stylesheet">
+        <link href="css/leaflet.css" rel = "stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid">
+          <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-sidebar sidebar collapse">
+              <div class="sidebar-sticky pt-3">
+                
+                <div class="d-flex justify-content-center mb-4">
+                    <img src = "images/profile/me.jpeg" class = "profile">
+                </div>
+
+                <ul class="nav flex-column items" id = "sidebar-items">
+                </ul>
+              </div>
+            </nav>
+
+            <main role="main" class="main col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                
+                <div class = "dropdown d-flex justify-content-end mt-3">
+
+                    <img id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class = "icon dropdown-toggle" src = "images/icons/lang.svg">
+  
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" id = "portuguese-item">
+                            <input type = "radio" name = "lang-option" id = "portuguese-option">   
+                            Português
+                        </a>
+                        <a class="dropdown-item" id = "english-item">
+                            <input type = "radio" name = "lang-option" id = "english-option">
+                            English
+                        </a>
+                    </div>
+                </div>
+                <div class = "d-flex justify-content-start">
+                    <img class="icon icon-responsive" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" src = "images/icons/menu.svg">
+                </div>
+
+                <div class = "content">
+
+                  <div id = "about"></div>
+
+                  <div id = "experience" class = "section">
+                    <div id = "mapid"></div>
+                  </div>
+
+                  <div id = "technical-skills" class = "section">
+                  </div>
+                  <div id = "personal-skills" class = "section">
+                  </div>
+
+                  <div id = "education" class = "section">
+                  </div>
+                </div>
+            </main>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id = "modal-content">
+              </div>
+              <div class="modal-footer">
+                <button id = "modal-close" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src = "js/jquery-3.6.0.min.js"></script>
+        <script src = "js/popper.min.js"></script>
+        <script src = "js/bootstrap.min.js"></script>
+        <script src = "js/feather.min.js"></script>
+        <script src = "js/moment.min.js"></script>
+        <script src = "js/leaflet.js"></script>
+        <script src = "js/globals.js"></script>
+        <script src = "js/modal.js"></script>
+        <script src = "js/sidebar.js"></script>
+        <script src = "js/content.js"></script>
+    </body>
+</html>
