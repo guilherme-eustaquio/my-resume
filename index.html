@@ -15,7 +15,7 @@
         <script src="js/jspdf-html2canvas.min.js"></script>
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid" style="display: block;">
           <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-sidebar sidebar collapse">
               <div class="sidebar-sticky pt-2 mb-5">
@@ -71,33 +71,36 @@
             </main>
           </div>
         </div>
+        <div class = "container-fluid pdf-properties" id = "pdf-to-render">
 
-
-        <div class = "container-fluid" style = "display: none" id = "pdf-to-render">
+          PDF gerado dinamicamente a partir da minha página pessoal <a href = "https://guilherme-eustaquio.github.io/my-resume">https://guilherme-eustaquio.github.io/my-resume</a>
+          
           <div class="d-flex justify-content-center background-inner-pdf">
 
             <main role="main">
 
               <div class = "content">
-
+                
                 <div class="d-flex justify-content-center mb-5">
                     <img src = "images/profile/me.jpeg" class = "profile profile-pdf">
                 </div>
 
-                  <div id = "about-pdf" class = "mb-5">
-                  </div>
+                <div id = "about-pdf" class = "mb-5">
+                </div>
 
-                  <div id = "experience-pdf" class = "mb-5">
-                    <div id = "mapid"></div>
-                  </div>
+                <div id = "experience-pdf" class = "mb-5">
+                  <div id = "mapid"></div>
+                </div>
 
-                  <div id = "technical-skills-pdf" class = "mb-5">
-                  </div>
-                  <div id = "personal-skills-pdf" class = "mb-5">
-                  </div>
+                <div id = "technical-skills-pdf" class = "mb-5 pb-5">
+                </div>
+                <br><br><br><br><br><br><br><br>
 
-                  <div id = "education-pdf">
-                  </div>
+                <div id = "personal-skills-pdf" class = "mb-5">
+                </div>
+
+                <div id = "education-pdf">
+                </div>
               </div>
             </main>
           </div>

@@ -9,29 +9,23 @@ $("#generate-pdf").click(function() {
 
 
   initContent(["about-pdf", "experience-pdf", "technical-skills-pdf", "personal-skills-pdf", "education-pdf"], false);
-
+  
   let pdfRendered = document.getElementById("pdf-to-render");
   pdfRendered.style.display = "block";
   
   html2PDF(pdfRendered, {
     jsPDF: {
-      format: 'a4',
+      format: 'a3',
       orientation: 'portrait'
     },
     html2canvas: {
-      logging: true,
       useCORS: true,
-      scale: 3
+      scale: 2
     },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
     imageType: 'image/jpeg',
     output: pdfTitle[LANG],
-    imageQuality: 3,
-    margin: {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-    }
+    imageQuality: 1
   });
 
   pdfRendered.style.display = "none";

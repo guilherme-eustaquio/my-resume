@@ -34,12 +34,12 @@ const experienceOptions = {
 		companiesPoint : [
 			{
 				name: "Kyros Tecnologia (Estágio)",
-				work: "Desenvolvedor backend Java + Spring Boot e SQL. Trabalho com sistemas da Algar como SOM, CRM, CAL e Jira.",
+				work: "2019/05 - Atual: Desenvolvedor backend Java + Spring Boot e SQL. Trabalho com sistemas da Algar como SOM, CRM, CAL e Jira.",
 				coordinates: [-18.9009556,-48.2630205]
 			}, 
 			{
 				name: "FAU - Fundação Apoio Universitário (Contrato)",
-				work: "Desenvolvedor front-end (Angular) e backend (NodeJS) focado em IOT para redes elétricas da CEB.",
+				work: "2020/05 - 2021/02: Desenvolvedor front-end (Angular) e backend (NodeJS) focado em IOT para redes elétricas da CEB.",
 				coordinates: [-18.9207809,-48.2610507]
 			}
 		],
@@ -51,12 +51,12 @@ const experienceOptions = {
 		companiesPoint : [
 			{
 				name: "Kyros Technology (Internship)",
-				work: "Java + Spring Boot and SQL backend developer. I work with Algar systems such as SOM, CRM, CAL and Jira.",
+				work: "2019-05 - Current: Java + Spring Boot and SQL backend developer. I work with Algar systems such as SOM, CRM, CAL and Jira.",
 				coordinates: [-18.9009556,-48.2630205]
 			}, 
 			{
 				name: "FAU - University Support Foundation (Contract)",
-				work: "Front-end (Angular) and backend (NodeJS) developer focused on IOT for CEB's electrical networks.",
+				work: "2020-05 - 2021-02: Front-end (Angular) and backend (NodeJS) developer focused on IOT for CEB's electrical networks.",
 				coordinates: [-18.9207809,-48.2610507]
 			}
 		],
@@ -252,9 +252,6 @@ function initContent(ids, mapActive) {
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1">
               <h1 class="h2">${experienceOptions[LANG].title}</h1>
           </div>
-          <p class="lead text-muted ml-3">    
-            ${experienceOptions[LANG].help}
-          </p>
       	`;
 
       	let experienceElement = document.getElementById(experienceId);
@@ -354,5 +351,4 @@ function initContent(ids, mapActive) {
 
 document.getElementsByTagName("body")[0].addEventListener("changelang", function() {
 	initContent(["about", "experience", "technical-skills", "personal-skills", "education"], true);
-
 });

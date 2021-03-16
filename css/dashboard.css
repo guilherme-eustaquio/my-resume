@@ -211,7 +211,13 @@ body {
 }
 
 .background-inner-pdf {
-    margin-left: 80px;
-    margin-right: 80px;
+   size: 7in 9.25in;
+   margin: 27mm 16mm 27mm 16mm;
+}
 
+.pdf-properties {
+    display: none; 
+    background-image: linear-gradient(to top, #ffffff, #f5f4f5, #ebeaeb, #e1dfe0, #d8d5d5);
+    margin-top: 0px;
+    margin-left: 0px;
 }
