@@ -8,6 +8,7 @@ const aboutOptions = {
 		phone: "(34) 9-9877-3935",
 		age: `${moment().diff('1997-07-28', 'years', false)} anos`,
 		email: "guilherme.eustaquio.moreira@gmail.com",
+		linkedin:"https://www.linkedin.com/in/guilherme-moreira-4575711b2/",
 		descriptions: ["- Know-how em desenvolvimento de sistemas em front-end e back-end",
 		"- Elaboração de arquitetura de sistemas",
 		"- Criação de sistemas IOT"]
@@ -21,6 +22,7 @@ const aboutOptions = {
 		phone: "+55 34 9-9877-3935",
 		age: `${moment().diff('1997-07-28', 'years', false)} years old`,
 		email: "guilherme.eustaquio.moreira@gmail.com",
+		linkedin: "https://www.linkedin.com/in/guilherme-moreira-4575711b2/",
 		descriptions: ["- Know-how in front-end and back-end systems development",
 		"- Systems architecture development",
 		"- Creation of IOT systems"]
@@ -201,7 +203,7 @@ function initContent(ids, mapActive) {
             <h1 class="h2">${aboutOptions[LANG].name}</h1>
           </div>
           <h6>${aboutOptions[LANG].street} · ${aboutOptions[LANG].district} · ${aboutOptions[LANG].cityState} · 
-          ${aboutOptions[LANG].phone} · ${aboutOptions[LANG].age} · <a href = "mailto: ${aboutOptions[LANG].email}">${aboutOptions[LANG].email}</a></h6>
+          ${aboutOptions[LANG].phone} · ${aboutOptions[LANG].age} · <a href = "mailto: ${aboutOptions[LANG].email}">${aboutOptions[LANG].email}</a> · <a href = "${aboutOptions[LANG].linkedin}" target="_blank">linkedin</a></h6>
 
 		`;
 
