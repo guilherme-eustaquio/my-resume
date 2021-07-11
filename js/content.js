@@ -182,12 +182,7 @@ const educationOptions = {
 					" - Studying English classes focused on conversation and business",
 					" - Intermediate level English with the ability to start a conversation and understand the speaker"
 				]
-			},
-			{
-				title: `Internal Training - <a class = "link-image" onclick = "openModalImage('images/profile/certificate-kyros.jpeg', 'Kyros Certificate')">Microcontrollers: guidance and instructions and RTOS</a></h4><p class="lead text-muted ml-3">`,
-				description: ["Internal training of the company Kyros Tecnologia with a duration of 26 hours in the period of July 2019"]
 			}
-
 		]
 	},
 };
