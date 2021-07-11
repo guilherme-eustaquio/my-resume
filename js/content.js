@@ -1,29 +1,31 @@
+var LeafIcon = L.Icon.extend({
+    options: {
+        popupAnchor:  [12, 0]
+    }
+});
+
 const aboutOptions = {
 	"pt-BR": {
 		name: "Guilherme Eustáquio Moreira Santana",
-		street: "Rua Fuad Abib Attuch 115",
-		district: "Jardim Patrícia",
 		cityState: "Uberlândia MG",
-		zip:"38414198",
 		phone: "(34) 9-9877-3935",
 		age: `${moment().diff('1997-07-28', 'years', false)} anos`,
-		email: "guilherme.eustaquio.moreira@gmail.com",
 		descriptions: ["- Know-how em desenvolvimento de sistemas em front-end e back-end",
 		"- Elaboração de arquitetura de sistemas",
 		"- Criação de sistemas IOT"]
 	},
 	"en-US": {
 		name: "Guilherme Eustáquio Moreira Santana",
-		street: "115 Fuad Abib Attuch",
-		district: "Jardim Patrícia",
 		cityState: "Uberlândia MG, Brazil",
-		zip:"38414198",
 		phone: "+55 34 9-9877-3935",
 		age: `${moment().diff('1997-07-28', 'years', false)} years old`,
-		email: "guilherme.eustaquio.moreira@gmail.com",
 		descriptions: ["- Know-how in front-end and back-end systems development",
 		"- Systems architecture development",
 		"- Creation of IOT systems"]
+	},
+	"socialMedia": {
+		linkedin: "https://www.linkedin.com/in/guilherme-moreira-4575711b2/",
+		email: "guilherme.eustaquio.moreira@gmail.com",
 	}
 };
 
@@ -33,14 +35,22 @@ const experienceOptions = {
 		help: "Clique em algum alfinete no mapa para mostrar detalhes sobre o local que já trabalhei",
 		companiesPoint : [
 			{
-				name: "Kyros Tecnologia (Estágio)",
-				work: "Desenvolvedor backend Java + Spring Boot e SQL. Trabalho com sistemas da Algar como SOM, CRM, CAL e Jira.",
+				name: "Kyros Tecnologia (Estágio) - 05/19 até 05/21",
+				work: "fui desenvolvedor backend Java + Spring Boot e SQL. Trabalho com sistemas da Algar como SOM, CRM, CAL e Jira.",
+				icon: new LeafIcon({iconUrl: './css/images/marker-no-more.png'}),
 				coordinates: [-18.9009556,-48.2630205]
 			}, 
 			{
-				name: "FAU - Fundação Apoio Universitário (Contrato)",
-				work: "Desenvolvedor front-end (Angular) e backend (NodeJS) focado em IOT para redes elétricas da CEB.",
+				name: "FAU - Fundação Apoio Universitário (Contrato) - 08/20 até 03/21",
+				work: "fui desenvolvedor front-end (Angular) e backend (NodeJS) focado em IOT para redes elétricas da CEB.",
+				icon: new LeafIcon({iconUrl: './css/images/marker-no-more.png'}),
 				coordinates: [-18.9207809,-48.2610507]
+			},
+			{
+				name: "TQI IT (Atual)",
+				work: "Engenheiro de Software Pleno",
+				icon: new LeafIcon({iconUrl: './css/images/marker-icon.png'}),
+				coordinates: [-18.9079332,-48.2614577]
 			}
 		],
 		streetView: "Abrir no Street View"
@@ -50,14 +60,22 @@ const experienceOptions = {
 		help: "Click on a pin on the map to show details about the place I’ve worked at",
 		companiesPoint : [
 			{
-				name: "Kyros Technology (Internship)",
-				work: "Java + Spring Boot and SQL backend developer. I work with Algar systems such as SOM, CRM, CAL and Jira.",
+				name: "Kyros Technology (Internship) - 05/19 until 05/21",
+				work: "I was Java + Spring Boot and SQL backend developer. I worked with Algar systems such as SOM, CRM, CAL and Jira.",
+				icon: new LeafIcon({iconUrl: './css/images/marker-no-more.png'}),
 				coordinates: [-18.9009556,-48.2630205]
 			}, 
 			{
-				name: "FAU - University Support Foundation (Contract)",
-				work: "Front-end (Angular) and backend (NodeJS) developer focused on IOT for CEB's electrical networks.",
+				name: "FAU - University Support Foundation (Contract) - 08/20 until 03/21",
+				work: "I was Front-end (Angular) and backend (NodeJS) developer focused on IOT for CEB's electrical networks.",
+				icon: new LeafIcon({iconUrl: './css/images/marker-no-more.png'}),
 				coordinates: [-18.9207809,-48.2610507]
+			},
+			{
+				name: "TQI IT (Current)",
+				work: "Software Engineer",
+				icon: new LeafIcon({iconUrl: 'css/images/marker-icon.png'}),
+				coordinates: [-18.9079332,-48.2614577]
 			}
 		],
 		streetView: "Open on Street View"
@@ -70,14 +88,14 @@ const technicalSkillsOptions = {
 		skills: [
 			"- HTML, CSS3 e framework Bootstrap",
 			"- Javascript para Web e frameworks/bibliotecas Angular 2, jQuery, etc",
-			"- Java e frameworks Hibernate, JPA e Spring",
+			"- Java, Kotlin e frameworks Hibernate, JPA e Spring",
 			"- NodeJS e framework Express",
 			"- PHP e framework Laravel",
 			"- Banco de Dados MySQL e PostgreSQL",
 			"- Desenvolvimento mobile utilizando Ionic e Angular como framework",
 			"- Embarcados: Arduino e ESP8266",
 			"- Docker",
-			"- Git (Bitbucket, Github e Gitlab)",
+			"- Git (Bitbucket, Github e Gitlab com CI/CD)",
 			"- Linux e Windows",
 			"- Pacote office (Excel, PowerPoint, Word)"
 		]
@@ -87,14 +105,14 @@ const technicalSkillsOptions = {
 		skills: [
 			"- HTML, CSS3 and Bootstrap framework",
 			"- Javascript for Web and frameworks / libraries Angular 2, jQuery, etc",
-			"- Java and Hibernate, JPA and Spring frameworks",
+			"- Java, Kotlin and Hibernate, JPA and Spring frameworks",
 			"- NodeJS and Express framework",
 			"- PHP and Laravel framework",
 			"- MySQL and PostgreSQL databases",
 			"- Mobile development using Ionic and Angular as a framework",
 			"- Embedded: Arduino and ESP8266",
 			"- Docker",
-			"- Git (Bitbucket, Github and Gitlab)",
+			"- Git (Bitbucket, Github and Gitlab with CI/CD)",
 			"- Linux and Windows",
 			"- Office package (Excel, PowerPoint, Word)"
 		]
@@ -144,12 +162,7 @@ const educationOptions = {
 					" - Fazendo aulas particulares de inglês focado em conversação e negócios",
 					" - Inglês intermediário com capacidade de iniciar uma conversa e compreender o falante atualmente"
 				]
-			},
-			{
-				title: `Treinamento Interno - <a class = "link-image" onclick = "openModalImage('images/profile/certificate-kyros.jpeg', 'Certificado Kyros')">Microcontroladores: orientação e instruções e RTOS</a></h4><p class="lead text-muted ml-3">`,
-				description: ["Treinamento interno da empresa Kyros Tecnologia com duração de 26 horas no período de Julho de 2019."]
 			}
-
 		]
 	},
 	"en-US": {
@@ -194,8 +207,7 @@ function initContent() {
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1">
             <h1 class="h2">${aboutOptions[LANG].name}</h1>
           </div>
-          <h6>${aboutOptions[LANG].street} · ${aboutOptions[LANG].district} · ${aboutOptions[LANG].cityState} · 
-          ${aboutOptions[LANG].phone} · ${aboutOptions[LANG].age} · <a href = "mailto: ${aboutOptions[LANG].email}">${aboutOptions[LANG].email}</a></h6>
+          ${aboutOptions[LANG].phone} · ${aboutOptions[LANG].age} · <a href = "mailto: ${aboutOptions.socialMedia.email}">${aboutOptions.socialMedia.email}</a> · <a href = "${aboutOptions.socialMedia.linkedin}">linkedin</a></h6>
 
 		`;
 
@@ -213,7 +225,7 @@ function initContent() {
 	const initExperience = function() {
 
 		experienceOptions[LANG].companiesPoint.forEach(exp => {
-			L.marker(exp.coordinates).addTo(map)
+			L.marker(exp.coordinates, {icon:exp.icon}).addTo(map)
 			.bindPopup(`<b>${exp.name}</b><br>${exp.work}<br><br>
 				<a target = "_blank" href = "https://www.google.com/maps?layer=c&cbll=${exp.coordinates[0]},${exp.coordinates[1]}">${experienceOptions[LANG].streetView}</a>`).openPopup();
 		});
