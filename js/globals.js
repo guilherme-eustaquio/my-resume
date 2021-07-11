@@ -1,9 +1,14 @@
+window.jsPDF = window.jspdf.jsPDF;
 var LANG = "pt-BR";
 let event = new Event('changelang');
 let titles = {
 	"pt-BR": "Currículo Guilherme",
 	"en-US": "Guilherme Resume"
 };
+let pdfTitle = {
+	"pt-BR": "Meu currículo",
+	"en-US": "My resume"	
+}
 
 
 $(document).ready(function() {
@@ -13,6 +18,12 @@ $(document).ready(function() {
 
 	changeLanguage("#portuguese");
 });
+
+
+$("#generate-pdf").click(function() {
+	new PdfGenerator().generate();
+});
+
 
 $("#portuguese-option, #english-option").click(function() {
 
